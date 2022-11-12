@@ -9,7 +9,7 @@ public class Tree
 {
     private readonly CSharpParseOptions _option;
 
-    public Tree(IEnumerable<string> preprocessorSymbols, LanguageVersion languageVersion)
+    public Tree(LanguageVersion languageVersion, IEnumerable<string> preprocessorSymbols)
     {
         _option = new(languageVersion, preprocessorSymbols: preprocessorSymbols);
     }

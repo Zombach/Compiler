@@ -16,7 +16,7 @@ public class CompilationCSharp
     {
         CSharpCompilationOptions compileOption = new(outputKind, optimizationLevel: optimizationLevel, allowUnsafe: allowUnsafe);
         _cSharpCompilation = CSharpCompilation.Create("Test", options: compileOption);
-        _tree = new Tree(new List<string> { $"{optimizationLevel}" }, languageVersion);
+        _tree = new Tree(languageVersion, new List<string> { $"{optimizationLevel}" });
         _reference = new();
         _builder = new();
     }

@@ -19,6 +19,7 @@ public class Reference
         string assemblyDirectory = typeof(int).Assembly.Location;
         References = References.Append(MetadataReference.CreateFromFile(assemblyDirectory));
         AddReference("System.dll");
+        AddReference("System.IO.dll");
         AddReference("System.Console.dll");
         AddReference("System.Runtime.dll");
     }

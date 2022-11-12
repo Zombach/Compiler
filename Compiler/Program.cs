@@ -7,13 +7,13 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.Loader;
 
-namespace Compiler.exe;
+namespace Compiler;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        string source = "using System;\r\nnamespace Compiler;\r\n\r\npublic class Program\r\n{\r\n    public static void Main(string[] args) => Console.WriteLine(\"Тест\");\r\n    \r\n}";
+        string source = "using System;\r\nnamespace Test;\r\n\r\npublic class Program\r\n{\r\n    public static void Main(string[] args) => Console.WriteLine(\"Тест\");\r\n    \r\n}";
         SourceText sourceText = SourceText.From(source);
         CSharpParseOptions option = new(LanguageVersion.CSharp11, preprocessorSymbols: new List<string> { "Debug" });
         SyntaxTree tree = CSharpSyntaxTree.ParseText(sourceText, option);
@@ -76,7 +76,7 @@ public class Program
     private static void AddReference(ref IEnumerable<MetadataReference> references, string dllName)
     {
         string? assemblyDirectory = Path.GetDirectoryName(typeof(object).Assembly.Location);
-        if (assemblyDirectory is not null && Directory.Exists(assemblyDirectory) && File.Exists($"{assemblyDirectory}"))
+        if (assemblyDirectory is not null && Directory.Exists(assemblyDirectory) && File.Exists($"{assemblyDirectory}\\{dllName}"))
         {
             references = references.Append(MetadataReference.CreateFromFile($"{assemblyDirectory}\\{dllName}"));
         }

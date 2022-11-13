@@ -33,8 +33,8 @@ public class CompilationCSharp
     {
         _cSharpCompilation.SyntaxTrees
         .Select(syntaxTree => syntaxTree.GetRoot().DescendantNodes().OfType<UsingDirectiveSyntax>())
-        .SelectMany(usingDirectiveSyntax => usingDirectiveSyntax)
-        .ToList().ForEach(usingDirectiveSyntax => _reference.AddReference($"{usingDirectiveSyntax.Name}.dll"));
+        .SelectMany(usingDirectiveSyntax => usingDirectiveSyntax).ToList()
+        .ForEach(usingDirectiveSyntax => _reference.AddReference($"{usingDirectiveSyntax.Name}.dll"));
         CheckTrees();
     }
 

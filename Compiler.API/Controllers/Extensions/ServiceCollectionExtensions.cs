@@ -1,6 +1,6 @@
 ﻿using Compiler.Business.Services;
 using Compiler.Business.Services.Interfaces;
-using Compiler.Models.Settings;
+using Compiler.Core.Configs;
 
 namespace Compiler.API.Controllers.Extensions;
 

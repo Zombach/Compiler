@@ -54,6 +54,7 @@ public class Reference
         "mscorrc.dll",
         "mscordbi.dll",
         "mscordaccore_amd64_amd64_7.0.22.51805.dll",
+        "mscordaccore_amd64_amd64_7.0.122.56804.dll",
         "mscordaccore.dll",
         "Microsoft.DiaSymReader.Native.amd64.dll",
         "hostpolicy.dll",

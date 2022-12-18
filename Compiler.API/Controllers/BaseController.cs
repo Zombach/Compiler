@@ -10,12 +10,12 @@ namespace Compiler.API.Controllers;
 [Route("[controller]")]
 public abstract class BaseController<T> : Controller where T : IGeneralService
 {
-    protected IMapper Mapper { get; }
     protected T Service { get; }
+    protected IMapper Mapper { get; }
 
-    protected BaseController(IMapper mapper, IGeneralService generalService)
+    protected BaseController(IGeneralService generalService, IMapper mapper)
     {
-        Mapper = mapper;
         Service = (T)generalService;
+        Mapper = mapper;
     }
 }

@@ -1,10 +1,10 @@
 ﻿using Compiler.API.Controllers.Extensions;
 using Compiler.Core;
-using Compiler.Models.Settings;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using NSwag.Generation.Processors.Security;
 using System.Net;
 using System.Text.Json.Serialization;
+using Compiler.Core.Configs;
 
 namespace Compiler.API;
 
@@ -15,7 +15,7 @@ public class Startup
         string currentEnvironment = configuration.GetValue<string>("ASPNETCORE_ENVIRONMENT") ?? string.Empty;
         IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile($"appsettings{currentEnvironment}.json", true);
         Configuration = builder.Build();
-        Instance.App.Config = builder.Build().Get<AppConfig>();
+        Instance.App.Config = Configuration.Get<AppConfig>();
     }
 
     public IConfiguration Configuration { get; }

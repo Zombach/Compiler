@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<Content Include="..\Compiler.DB\Compiler.DB.sqlproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Data.Tools.Msbuild" Version="16.0.62005.1040-preview" />
+	</ItemGroup>
+
+</Project>

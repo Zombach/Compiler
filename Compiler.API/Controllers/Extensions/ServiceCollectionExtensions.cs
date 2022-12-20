@@ -16,6 +16,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddCustomServices(this IServiceCollection services)
     {
         services.AddScoped<ITestService, TestService>();
+        services.AddScoped<ITemplatesService, TemplatesService>();
         return services;
     }
 
